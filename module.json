@@ -26,11 +26,26 @@
     ],
     "requires": [
       {
+        "id": "lib-wrapper",
+        "type": "module",
+        "manifest": "https://raw.githubusercontent.com/ruipin/fvtt-lib-wrapper/master/module.json"
+      },
+      {
         "id": "mc-ro",
         "type": "module",
         "manifest": "https://raw.githubusercontent.com/reonZ/mc-ro/master/module.json"
       }
     ]
   },
+  "packs": [
+    {
+      "name": "nj-osr-helpers-macros",
+      "label": "NJ-helper Macros",
+      "path": "packs/macros.db",
+      "type": "Macro",
+      "module": "nj-ose-helpers",
+      "system": "ose"
+    }
+  ],
   "readme": "REAMDE.md"
 }
