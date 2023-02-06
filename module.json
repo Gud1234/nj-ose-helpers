@@ -1,10 +1,11 @@
 {
   "id": "nj-ose-helpers",
   "title": "Not Joking OSE Helpers",
-  "description": "PC, NPC generation, Turn tracking, Downtime",
+  "description": "PC, NPC generation, Downtime",
   "authors": [
     {
-      "name": "not joking"
+      "name": "not joking",
+      "url": "https://github.com/Gud1234"
     }
   ],
   "version": "0.0.1",
@@ -47,5 +48,8 @@
       "system": "ose"
     }
   ],
+  "url": "https://github.com/Gud1234/nj-ose-helpers",
+  "manifest": "https://raw.githubusercontent.com/Gud1234/nj-ose-helpers/main/module.json",
+  "download": "https://github.com/Gud1234/nj-ose-helpers/archive/refs/heads/main.zip",
   "readme": "REAMDE.md"
 }
