@@ -2,6 +2,8 @@
 
 ## Installation
 
+Install: `https://raw.githubusercontent.com/Gud1234/nj-ose-helpers/main/module.json`
+
 Navigate to the compendiums and import the `NJ Helpers` folder.
 
 ### Macros
