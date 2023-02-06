@@ -1,0 +1,36 @@
+{
+  "id": "nj-ose-helpers",
+  "title": "Not Joking OSE Helpers",
+  "description": "PC, NPC generation, Turn tracking, Downtime",
+  "authors": [
+    {
+      "name": "not joking"
+    }
+  ],
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10"
+  },
+  "esmodules": [
+    "./scripts/init.js"
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "ose"
+      },
+      {
+        "id": "ose-dev"
+      }
+    ],
+    "requires": [
+      {
+        "id": "mc-ro",
+        "type": "module",
+        "manifest": "https://raw.githubusercontent.com/reonZ/mc-ro/master/module.json"
+      }
+    ]
+  },
+  "readme": "REAMDE.md"
+}
