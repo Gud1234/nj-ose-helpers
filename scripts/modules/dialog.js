@@ -11,10 +11,6 @@ export const registerDialog = () => {
             <option value="50">Fancy: 50gp (+1 CHA)</option>
             </select>
           </div>
-          <div style="padding: 5px 0 0 10px; font-weight: bold;">Retainers #</div>
-          <div style="padding: 5px 0 0 10px;">
-              ${numericalOptions('retainers', 0, 7)}
-          </div>
     `;
   }
 
@@ -52,7 +48,6 @@ export const registerDialog = () => {
           label: 'Submit',
           callback: async (html) => {
             const accom = html.find('#accommodation')[0].value;
-            const retainers = html.find('#retainers')[0].value;
             const hp = new Roll(`5d3`)._evaluateSync().total;
             const hitDie = html.find('#carousing')[0].value;
             const carousing = new Roll(`${hitDie}d6`)._evaluateSync().total;
@@ -67,7 +62,7 @@ export const registerDialog = () => {
               `;
 
 
-            const cost = parseInt(accom) + (parseInt(retainers) * 10) + (carousing * 20);
+            const cost = parseInt(accom) + (carousing * 20);
             const message = `Gain ${carousing * 20 * 5}xp!! (Roll: ${carousing})`;
 
             const content = NJH.chatMessage.downtimeResult("Carousing", message, cost, hp, extraHtml);
@@ -134,7 +129,6 @@ export const registerDialog = () => {
             }
 
             const accom = html.find('#accommodation')[0].value;
-            const retainers = html.find('#retainers')[0].value;
             const hp = new Roll(`5d3`)._evaluateSync().total;
 
             const training = new Roll(`${rollVal}`)._evaluateSync().total;
@@ -146,7 +140,7 @@ export const registerDialog = () => {
             <div class="roll-result roll-fail"><b>Failure</b> (${training}) vs ${thresholdVal}
             </div></div>`;
 
-            const cost = parseInt(accom) + (parseInt(retainers) * 10) + parseInt(trainingCost);
+            const cost = parseInt(accom) + parseInt(trainingCost);
 
             const content = NJH.chatMessage.downtimeResult(title, placeholderVal, cost, hp, trainingResult);
 
@@ -212,7 +206,6 @@ export const registerDialog = () => {
             }
 
             const accom = html.find('#accommodation')[0].value;
-            const retainers = html.find('#retainers')[0].value;
             const hp = new Roll(`5d3`)._evaluateSync().total;
             const skillTrainingIndex = html.find('#skillTraining')[0].value;
 
@@ -227,7 +220,7 @@ export const registerDialog = () => {
             <div class="roll-result roll-fail"><b>Failure</b> (${training}) vs ${thresholdVal}
             </div></div>`;
 
-            const cost = parseInt(accom) + (parseInt(retainers) * 10) + parseInt(options[skillTrainingIndex].cost);
+            const cost = parseInt(accom) + parseInt(options[skillTrainingIndex].cost);
 
 
             const content = NJH.chatMessage.downtimeResult('Skill Training', `TRAIN ${stat}`, cost, hp, trainingResult);
@@ -255,10 +248,9 @@ export const registerDialog = () => {
           label: 'Submit',
           callback: async (html) => {
             const accom = html.find('#accommodation')[0].value;
-            const retainers = html.find('#retainers')[0].value;
             const hp = new Roll(`5d3`)._evaluateSync().total;
 
-            const cost = parseInt(accom) + (parseInt(retainers) * 10);
+            const cost = parseInt(accom);
 
             ChatMessage.create({ content: NJH.chatMessage.downtimeResult(title, message, cost, hp) });
           }

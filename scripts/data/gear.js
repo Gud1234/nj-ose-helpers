@@ -4,11 +4,7 @@ export const registerGear = () => {
     NJH.data.gear = NJH.data.gear || {};
     NJH.data.gear.weapons = NJH.data.gear.weapons || {};
 
-    NJH.data.gear.basic = ["Backpack", "Tinder box", "Waterskin",
-        '<a class="inline-roll roll" data-mode="roll" data-flavor="Rations" data-formula="1d6"><i class="fas fa-dice-d20"></i>1d6</a>  Iron Rations',
-        '<a class="inline-roll roll" data-mode="roll" data-flavor="Torches" data-formula="1d6"><i class="fas fa-dice-d20"></i>1d6</a>  Torches',
-        '<a class="inline-roll roll" data-mode="roll" data-flavor="Gold" data-formula="3d6"><i class="fas fa-dice-d20"></i>3d6</a>  Gold'
-    ]
+    NJH.data.gear.basic = ["Backpack", "Tinder box", "Waterskin"]
 
     NJH.data.gear.adventuring = [
         "Crowbar", "Hammer (small) + 12 iron spikes", "Holy water", "Lantern + 3 flasks of oil",

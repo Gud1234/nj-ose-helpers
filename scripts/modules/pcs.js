@@ -35,7 +35,8 @@ export const registerPCs = () => {
     }
 
     NJH.pcs.create = async function(pcClass, conMod) {
-      const allGear = NJH.data.gear.basic.concat(NJH.pcUtils.adventuringGear());
+      const torchesGoldAndRations = NJH.pcUtils.torchesGoldAndRations();
+      const allGear = NJH.data.gear.basic.concat(torchesGoldAndRations).concat(NJH.pcUtils.adventuringGear());
       const mapping = NJH.data.gear.byClass[pcClass];
       const armour = NJH.pcUtils.armour(mapping);
       const weapons = NJH.pcUtils.weapons(mapping);

@@ -44,6 +44,12 @@ export const registerPcUtils = () => {
     return [NJH.pcUtils.randomFromArray(gear), NJH.pcUtils.randomFromArray(gear)];
   }
 
+  NJH.pcUtils.torchesGoldAndRations = function () {
+    const tgr = [[`1d6`, 'torches'], [`1d6`, 'iron rations'], [`3d6`, 'gold']].map(item => `${new Roll(item[0])._evaluateSync().total} ${item[1]}`);
+
+    return tgr;
+  }
+
   NJH.pcUtils.armour = function (pcClassGearMapping) {
     const armourTable = NJH.data.gear.armour;
     if (pcClassGearMapping.armour.roll) {
@@ -72,7 +78,7 @@ export const registerPcUtils = () => {
   NJH.pcUtils.hp = function (diceRoll, conMod) {
     let roll = new Roll(`${diceRoll}`)._evaluateSync();
 
-    if (roll === 1) {
+    if (roll.total === 1) {
       roll = new Roll(`${diceRoll}`)._evaluateSync();
     }
 
